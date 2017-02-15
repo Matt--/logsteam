@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
 	before_action :find_note, only: [:show, :edit, :update, :destroy]
-
+	before_filter :authenticate, except: [ :index, :show ]
+	
 	def index
 		@notes = Note.where(user_id: current_user)
 	end
@@ -48,4 +49,7 @@ class NotesController < ApplicationController
 		params.require(:note).permit(:title, :content)
 	end
 
+	def authenticate
+		authenticate_user! && current_user.admin?
+	end
 end

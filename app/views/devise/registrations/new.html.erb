@@ -12,6 +12,9 @@
 
 	  <div class="form-actions">
 	    <%= f.button :submit, "Sign up", class: "button" %>
+	    
+	    <%= check_box_tag(:admin, "admin") %> Admin?
+
 	  </div>
 	<% end %>
 
