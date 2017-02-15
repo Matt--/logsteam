@@ -6,6 +6,13 @@ class NotesController < ApplicationController
 	end
 
 	def show
+		respond_to do |format|
+			format.html
+			format.pdf do
+				pdf = NotePdf.new
+				send_data pdf.render, filename: "note_#{@note.id}", type: "application/pdf"
+			end
+		end
 	end
 
 	def new
