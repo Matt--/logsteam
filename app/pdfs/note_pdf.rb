@@ -1,6 +1,7 @@
 class NotePdf < Prawn::Document
-	def initialize
-		super
-		text "Note goes here"
+	def initialize(note)
+		super()
+		@note = note
+		text "#{@note.title}\n#{@note.content}"
 	end
 end 
