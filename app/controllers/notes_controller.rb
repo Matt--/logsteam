@@ -1,6 +1,9 @@
 class NotesController < ApplicationController
 	before_action :find_note, only: [:show, :edit, :update, :destroy]
 	before_filter :authenticate, except: [ :index, :show ]
+
+	#this is for checking if the note is older than 3 days and is related to the private method check_time! in the notes controller
+	before_filter :check_time!, only: [:edit, :update]
 	
 	def index
 		@notes = Note.where(user_id: current_user)
@@ -69,4 +72,11 @@ class NotesController < ApplicationController
 	def authenticate
 		authenticate_user! && current_user.admin?
 	end
+
+	#for checking if the note is older than 3 days
+  def check_time!
+      if Time.now > @note.created_at + 3.days
+      redirect_to '/notes/editalert'
+      end
+    end
 end
