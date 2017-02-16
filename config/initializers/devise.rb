@@ -82,6 +82,15 @@ Devise.setup do |config|
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
   # passing skip: :sessions to `devise_for` in your config/routes.rb
+
+
+
+  config.secret_key = '216397d104898272f9783c1b5896b826b269048011cb6220bdf8d06e9217b33dfd5f2d8918185617cdd330095cdba2c24dd46b53a40b9d1d3e1561b6fed9cabf'
+  
+
+
+
+
   config.skip_session_storage = [:http_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to

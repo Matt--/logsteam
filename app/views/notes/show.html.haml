@@ -6,3 +6,4 @@
 		.buttons
 			= link_to "Edit", edit_note_path(@note), class: "button"
 			= link_to "Delete", note_path(@note), method: :delete, data: { confirm: "Are you sure?" }, class: "button"
+			= link_to "Export (PDF)", note_path(@note, format: "pdf"), class: "button"

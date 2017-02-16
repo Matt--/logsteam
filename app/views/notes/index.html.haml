@@ -6,7 +6,10 @@
 					.note
 						%p.title= note.title
 						%p.date= time_ago_in_words(note.created_at)
+			%button= link_to "Export All (PDF)", notes_path(format: "pdf")
 		- else 
 			%h2 Add a note
 			%p It appears you haven't created any logs yet... Create a steamy one below.
 			%button= link_to "New Note", new_note_path
+
+
