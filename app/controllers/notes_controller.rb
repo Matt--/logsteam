@@ -3,9 +3,26 @@ class NotesController < ApplicationController
 
 	def index
 		@notes = Note.where(user_id: current_user)
+		respond_to do |format|
+			format.html
+			format.pdf do
+				pdf = Prawn::Document.new
+				@notes.each do |note|
+					pdf.text "#{note.title} \n #{note.content} \n \n"
+				end
+				send_data pdf.render, filename: "MyNotes.pdf", type: "application/pdf"
+			end
+		end
 	end
 
 	def show
+		respond_to do |format|
+			format.html
+			format.pdf do
+				pdf = NotePdf.new(@note)
+				send_data pdf.render, filename: "note_#{@note.id}.pdf", type: "application/pdf"
+			end
+		end
 	end
 
 	def new
