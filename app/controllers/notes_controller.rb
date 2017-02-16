@@ -3,6 +3,7 @@ class NotesController < ApplicationController
 
 	def index
 		@notes = Note.where(user_id: current_user)
+<<<<<<< HEAD
 		respond_to do |format|
 			format.html
 			format.pdf do
@@ -23,6 +24,13 @@ class NotesController < ApplicationController
 				send_data pdf.render, filename: "note_#{@note.id}.pdf", type: "application/pdf"
 			end
 		end
+=======
+
+	end
+
+	def show
+		
+>>>>>>> 7898df81f1a49fa465585011b443615035f00978
 	end
 
 	def new
