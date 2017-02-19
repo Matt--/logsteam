@@ -27,6 +27,7 @@ class NotesController < ApplicationController
 				send_data pdf.render, filename: "note_#{@note.id}.pdf", type: "application/pdf"
 			end
 		end
+
 	end
 
 	def new
@@ -46,12 +47,16 @@ class NotesController < ApplicationController
 	def edit
 	end
 
+
 	def update
 		if @note.update(note_params)
 			redirect_to @note
 		else
 			render 'edit'
 		end
+	end
+
+	def calendar
 	end
 
 	def destroy
@@ -72,6 +77,8 @@ class NotesController < ApplicationController
 	def authenticate
 		authenticate_user! && current_user.admin?
 	end
+
+
 
 	#for checking if the note is older than 3 days
   def check_time!
