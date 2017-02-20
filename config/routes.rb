@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :meetings
   devise_for :users
   get 'welcome/index'
   get 'notes/editalert'
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
 
   get 'calendar' => 'notes#calendar'
 
-  
+  get 'profile' => 'notes#profile'
 
 
 end

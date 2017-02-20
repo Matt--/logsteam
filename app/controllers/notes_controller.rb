@@ -57,6 +57,11 @@ class NotesController < ApplicationController
 	end
 
 	def calendar
+		@notes = Note.all
+	end
+
+	def profile
+
 	end
 
 	def destroy
