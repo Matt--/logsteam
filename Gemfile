@@ -12,6 +12,7 @@ gem 'rails', '~> 5.0.1'
 
 group :production do
 	gem 'sqlite3'
+  gem 'pg', '0.18.4'
 end
 
 gem "simple_calendar", "~> 2.0"
@@ -56,3 +57,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Jacob adding export to pdf feature
 gem 'prawn', '~> 2.1'
+
+#Sam adding admin dashboard
+gem 'activeadmin', '~> 1.0.0.pre4' # as of now
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+# Plus integrations with:
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
