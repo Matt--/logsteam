@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
   get 'notes/editalert'
+  
   resources :notes
 
   authenticated :user do
@@ -16,5 +17,6 @@ Rails.application.routes.draw do
 
   get 'profile' => 'notes#profile'
 
+  get 'about' => 'notes#about'
 
 end
