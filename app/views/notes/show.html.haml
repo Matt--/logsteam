@@ -2,6 +2,7 @@
 	#note_show
 		%h1.title= @note.title
 		%p= simple_format(@note.content)
+		%p= "Last edited by " + @current_user
 
 		.buttons
 			= link_to "Edit", edit_note_path(@note), class: "button"
