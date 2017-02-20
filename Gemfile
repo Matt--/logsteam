@@ -11,8 +11,13 @@ gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
 
 group :production do
+	gem 'pg'
+end
+
+group :development do
 	gem 'sqlite3'
 end
+
 
 gem "simple_calendar", "~> 2.0"
 # Use Puma as the app server
@@ -49,6 +54,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
