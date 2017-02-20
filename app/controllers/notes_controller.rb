@@ -87,7 +87,7 @@ class NotesController < ApplicationController
 
 	#for checking if the note is older than 3 days
   def check_time!
-      if Time.now > @note.created_at + 3.days
+      if Time.now > @note.created_at + 3.days && current_user.admin == false
       redirect_to '/notes/editalert'
       end
     end
