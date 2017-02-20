@@ -12,12 +12,17 @@ class NotesController < ApplicationController
 			format.pdf do
 				pdf = Prawn::Document.new
 				@notes.each do |note|
-					pdf.text "#{note.title} \n #{note.content} \n \n"
+					pdf.text "#{note.created_at} \n Title: #{note.title}  \n Content: #{note.content} \n \n"
 				end
 				send_data pdf.render, filename: "MyNotes.pdf", type: "application/pdf"
 			end
 		end
 	end
+
+	def start_time
+
+	end
+
 
 	def show
 		respond_to do |format|

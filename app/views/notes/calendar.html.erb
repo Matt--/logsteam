@@ -1,10 +1,9 @@
-<%= month_calendar do |date, notes| %>
+<%= month_calendar events: @notes do |date, notes| %>
 	<%= date %>
 	
-
   <% notes.each do |note| %>
     <div>
-    wodkpoad
+    <%= link_to note.title, (url_for [note]) %>
     </div>
   <% end %>
 
