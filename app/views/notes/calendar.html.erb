@@ -1,10 +1,11 @@
 <%= month_calendar events: @notes do |date, notes| %>
 	<%= date %>
-	
+
   <% notes.each do |note| %>
-    <div>
+    <p>
     <%= link_to note.title, (url_for [note]) %>
-    </div>
+
+    </p>
   <% end %>
 
 <% end %>

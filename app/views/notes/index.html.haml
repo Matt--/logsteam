@@ -8,7 +8,7 @@
 						%p.date= time_ago_in_words(note.created_at) + ' ago'
 			
 		- else 
-			%h2 Add a note
+			%h2 Add a log
 			%p It appears you haven't created any logs yet... Create a steamy one below.
 			%button= link_to "New Note", new_note_path
 .wrapper_with_padding
