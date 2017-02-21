@@ -1,6 +1,7 @@
 .wrapper_with_padding
 	#note_show
-		%h1.title= @note.title
+		%h1.title= @note.title 
+		%a= @note.created_at
 		%p= simple_format(@note.content)
 
 		.buttons

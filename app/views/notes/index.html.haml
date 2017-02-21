@@ -1,5 +1,6 @@
 .wrapper_with_padding
 	#notes.clearfix
+		%h1 LogPile
 		- unless @notes.blank?
 			- @notes.each do |note|
 				%a{ href: (url_for [note])}
@@ -12,6 +13,8 @@
 			%p It appears you haven't created any logs yet... Create a steamy one below.
 			%button= link_to "New Note", new_note_path
 .wrapper_with_padding
+	%button= link_to "New Log", new_note_path
 	%button= link_to "Export All (PDF)", notes_path(format: "pdf")
+
 
 
