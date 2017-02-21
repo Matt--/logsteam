@@ -20,7 +20,7 @@ class NotesController < ApplicationController
 	end
 
 	def start_time
-
+		
 	end
 
 
@@ -62,7 +62,7 @@ class NotesController < ApplicationController
 	end
 
 	def calendar
-		@notes = Note.all
+		@notes = Note.where(user_id: current_user)
 	end
 
 	def profile
